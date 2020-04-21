@@ -1,5 +1,6 @@
 import 'package:first_flutter_app/BaseWidget1.dart';
 import 'package:first_flutter_app/BaseWidget2.dart';
+import 'package:first_flutter_app/LayoutWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -15,9 +16,9 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
   List menus = [
     'Text/Image/Button/TextFiled',
     'Slider/Checkbox/Radio/Switch',
-    'Container/Row/Clumn/Stack',
-    'Table/ListView/Wrap',
-    'Scrollable/NestedScrollView/GridView',
+    'Container/Row/Clumn/Stack/Wrap',
+    'Table/ListView/Flow',
+    'Scrollable/SingleChildScrollView/NestedScrollView/GridView',
     'SimpleDialog/AlertDialog/BottomSheet',
     'Appbar/BottomNavigationBar/TabBar',
     'Drawer',
@@ -42,6 +43,10 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
                       break;
                       case 1:{
                         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new BaseWidgetDemo2()));
+                      }
+                      break;
+                      case 2:{
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new LayoutStafulWidget()));
                       }
                       break;
                     }
