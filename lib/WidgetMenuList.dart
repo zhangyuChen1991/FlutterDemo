@@ -1,5 +1,7 @@
 import 'package:first_flutter_app/BaseWidget1.dart';
 import 'package:first_flutter_app/BaseWidget2.dart';
+import 'package:first_flutter_app/BaseWidget3.dart';
+import 'package:first_flutter_app/DialogDemo.dart';
 import 'package:first_flutter_app/LayoutWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -7,7 +9,6 @@ import 'package:flutter/widgets.dart';
 class WidgetMenuPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return WidgetMenuPageState();
   }
 }
@@ -17,11 +18,10 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
     'Text/Image/Button/TextFiled',
     'Slider/Checkbox/Radio/Switch',
     'Container/Row/Clumn/Stack/Wrap',
-    'Table/ListView/Flow',
-    'Scrollable/SingleChildScrollView/NestedScrollView/GridView',
+    'Table/ListView/GridView',
+    'Scrollable/SingleChildScrollView/NestedScrollView',
     'SimpleDialog/AlertDialog/BottomSheet',
-    'Appbar/BottomNavigationBar/TabBar',
-    'Drawer',
+    'Drawer/Appbar/BottomNavigationBar/TabBar',
     ''
   ];
   //Offstage
@@ -47,6 +47,14 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
                       break;
                       case 2:{
                         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new LayoutStafulWidget()));
+                      }
+                      break;
+                      case 3:{
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new BaseWdiget3StatefulWidget()));
+                      }
+                      break;
+                      case 5:{
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new DialogDemoPage()));
                       }
                       break;
                     }
