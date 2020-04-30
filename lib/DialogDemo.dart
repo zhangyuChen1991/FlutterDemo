@@ -136,13 +136,13 @@ class DialogDemoPageState extends State<DialogDemoPage> {
         builder: (BuildContext context) {
           return GestureDetector(
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pop(context);//点击外部阴影 弹窗消失
               },
               child: Container(
                 color: Colors.transparent,
                 alignment: Alignment.center,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {},//点击弹窗主体，自定义事件，覆盖父类的点击事件，避免弹窗消失
                   child: Container(
                     width: 240,
                     height: 160,

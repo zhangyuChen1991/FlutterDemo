@@ -29,13 +29,18 @@ class GridViewDemoStatefulWidget extends StatefulWidget {
 class GridViewState extends State {
   @override
   Widget build(BuildContext context) {
+    scrollController.addListener((){
+      print("scrollController.offset：+${scrollController.offset}");
+      print("scrollController.position：+${scrollController.position}");
+    });
     return GridView(
       scrollDirection: Axis.vertical,
       reverse: false,
       controller: scrollController,
+//      primary: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3, //横轴三个子widget
-          childAspectRatio: 1.0 //宽高比为1时
+          childAspectRatio: 1.3 //宽高比为1
           ),
 //      semanticChildCount: 5,
       children: <Widget>[

@@ -1,6 +1,6 @@
 import 'package:first_flutter_app/BaseWidget1.dart';
 import 'package:first_flutter_app/BaseWidget2.dart';
-import 'package:first_flutter_app/BaseWidget3.dart';
+import 'package:first_flutter_app/TableDemo.dart';
 import 'package:first_flutter_app/DialogDemo.dart';
 import 'package:first_flutter_app/LayoutWidget.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +29,7 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+        scrollDirection:Axis.vertical,
         itemBuilder: (BuildContext context, int index) {
           return Container(
               height: 60,

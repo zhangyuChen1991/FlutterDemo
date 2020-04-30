@@ -144,6 +144,7 @@ class TableDemoState extends State<TableDemoStatefulWidget> {
 
 //        columnWidths: {0: FixedColumnWidth(100),1: FixedColumnWidth(70),2: FixedColumnWidth(130)},//具体宽度，这里这样写宽度分别为100，70，130
       defaultVerticalAlignment: TableCellVerticalAlignment.middle, //纵向的对齐方式
+//      defaultColumnWidth: FlexColumnWidth(1.0),
     );
   }
 }

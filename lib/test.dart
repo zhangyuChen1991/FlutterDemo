@@ -54,17 +54,12 @@ class PageTitleState extends State<PageTitleStatefulWidget> {
 class DemoStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      fit:StackFit.loose,
-      alignment: AlignmentDirectional.center,
-      textDirection: TextDirection.ltr,
-      overflow: Overflow.clip,
-      children: <Widget>[
-        Container(width: 120,height: 120,color: Colors.cyan[200],),
-        Container(width: 90,height: 90,color: Colors.cyan[400],),
-        Container(width: 60,height: 60,color: Colors.cyan[600],),
-        Positioned(left: 100,top: 100,child: Container(width: 120,height: 120,color: Colors.cyan[800],),)//指定位置，超出stack范围，测试overflow属性
-      ],
+    return NestedScrollView(
+      scrollDirection: Axis.vertical,
+      reverse:false,
+      body: Column(
+        children: <Widget>[],
+      ),
     );
   }
 }
