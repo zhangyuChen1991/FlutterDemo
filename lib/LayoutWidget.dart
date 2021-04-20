@@ -8,7 +8,46 @@ class LayoutStafulWidget extends StatefulWidget {
   }
 }
 
-class LayoutWidgetState extends State {
+class LayoutWidgetState extends State<LayoutStafulWidget> with WidgetsBindingObserver {
+  //绑定WidgetsBindingObserver来监听页面的生命周期
+  AppLifecycleState _lastLifecycleState;
+
+  @override
+  void initState() {
+    super.initState();
+    //添加监听
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    //remove监听
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    setState(() {
+      _lastLifecycleState = state;
+    });
+
+    switch (_lastLifecycleState) {
+      case AppLifecycleState.inactive:
+        //应用处于非活跃状态并且不接收用户输入。
+        break;
+      case AppLifecycleState.detached:
+        //应用依然保留 flutter engine，但是它会脱离全部宿主 view。
+        break;
+      case AppLifecycleState.paused:
+        //应用当前对用户不可见，无法响应用户输入，并运行在后台。对应于 Android 中的 onPause()；
+        break;
+      case AppLifecycleState.resumed:
+        //应用对用户可见并且可以响应用户的输入。这个事件对应于 Android 中的 onPostResume()；
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -131,41 +170,53 @@ class LayoutWidgetState extends State {
               ),
               Container(
                 child: Text(
-                    'Stack: 重叠布局，右下角的子控件只有一部分在Stack内，因为使用Overflow.clip，超出的部分被截掉了'),
+                    'Stack: 重叠布局，右下角的子控件只有一部分在Stack内，因为使用Overflow.clip，超出的部分被截掉了;文字使用了Align，方位居中靠右'),
                 margin: EdgeInsets.fromLTRB(0, 30, 0, 10),
               ),
-              Stack(
-                fit: StackFit.loose,
-                alignment: AlignmentDirectional.center,
-                textDirection: TextDirection.ltr,
-                overflow: Overflow.clip,
-                children: <Widget>[
-                  Container(
-                    width: 120,
-                    height: 120,
-                    color: Colors.cyan[200],
-                  ),
-                  Container(
-                    width: 90,
-                    height: 90,
-                    color: Colors.cyan[400],
-                  ),
-                  Container(
-                    width: 60,
-                    height: 60,
-                    color: Colors.cyan[600],
-                  ),
-                  Positioned(
-                    left: 100,
-                    top: 100,
-                    child: Container(
+              Container(
+                width: 120,
+                height: 120,
+                child: Stack(
+                  fit: StackFit.loose,
+                  alignment: AlignmentDirectional.center,
+                  textDirection: TextDirection.ltr,
+//                  overflow: Overflow.visible,//子控件超出部分不截掉
+                  overflow: Overflow.clip,
+                  children: <Widget>[
+                    Container(
                       width: 120,
                       height: 120,
-                      color: Colors.cyan[800],
+                      color: Colors.cyan[200],
                     ),
-                  )
-                  //指定位置，超出stack范围，测试overflow属性
-                ],
+                    Container(
+                      width: 90,
+                      height: 90,
+                      color: Colors.cyan[400],
+                    ),
+                    Container(
+                      width: 60,
+                      height: 60,
+                      color: Colors.cyan[600],
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        "Align centerLeft",
+                        style: TextStyle(color: Colors.red, fontSize: 12),
+                      ),
+                    ),
+                    Positioned(
+                      left: 100,
+                      top: 100,
+                      child: Container(
+                        width: 120,
+                        height: 120,
+                        color: Colors.cyan[800],
+                      ),
+                    )
+                    //指定位置，超出stack范围，测试overflow属性
+                  ],
+                ),
               ),
               Container(
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 10),

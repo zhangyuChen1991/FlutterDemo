@@ -3,8 +3,12 @@ import 'package:first_flutter_app/BaseWidget2.dart';
 import 'package:first_flutter_app/TableDemo.dart';
 import 'package:first_flutter_app/DialogDemo.dart';
 import 'package:first_flutter_app/LayoutWidget.dart';
+import 'package:first_flutter_app/ListViewDemo.dart';
+import 'package:first_flutter_app/ui/qqmusic/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import 'BaseWidget4.dart';
 
 class WidgetMenuPage extends StatefulWidget {
   @override
@@ -22,6 +26,8 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
     'Scrollable/SingleChildScrollView/NestedScrollView',
     'SimpleDialog/AlertDialog/BottomSheet',
     'Drawer/Appbar/BottomNavigationBar/TabBar',
+    'ListView',
+    'QQ音乐主页',
     ''
   ];
   //Offstage
@@ -56,6 +62,18 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
                       break;
                       case 5:{
                         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new DialogDemoPage()));
+                      }
+                      break;
+                      case 6:{
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new BaseWidgetDemo4()));
+                      }
+                      break;
+                      case 7:{
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new ListStatefulWedgit()));
+                      }
+                      break;
+                      case 8:{
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new HomePage()));
                       }
                       break;
                     }
