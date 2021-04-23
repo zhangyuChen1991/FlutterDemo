@@ -1,7 +1,8 @@
 import 'package:first_flutter_app/WidgetMenuList.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(
+    new MyApp());
 
 class MyApp extends StatelessWidget {
   @override

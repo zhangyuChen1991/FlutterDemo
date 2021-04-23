@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 /// 描述：
 
 class DebugData {
-  static List<SearchBarBean> searchBarItems = [SearchBarBean("星空剪彩","全新舞曲颠覆想象"),SearchBarBean("牧马城市","为你推荐")];
+  static List<SearchBarBean> searchBarItems = [SearchBarBean("星空剪彩","全新舞曲颠覆想象"),SearchBarBean("牧马城市","为你推荐")
+    ,SearchBarBean("星空剪彩","全新舞曲颠覆想象"),];
 
 
 }

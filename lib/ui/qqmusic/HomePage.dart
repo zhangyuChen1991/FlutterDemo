@@ -1,10 +1,12 @@
+import 'dart:io';
+
 import 'package:first_flutter_app/ui/qqmusic/HomeTab.dart';
 import 'package:first_flutter_app/ui/qqmusic/MeTab.dart';
 import 'package:first_flutter_app/ui/qqmusic/ThirdTab.dart';
 import 'package:first_flutter_app/ui/qqmusic/VideoTab.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,8 +32,20 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
         label: "我的", activeIcon: createIconImage("images/skin_tab_mine_selected.png")),
   ];
   int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+
+    if (Platform.isAndroid) {
+      // 在组件渲染之后，再覆写状态栏颜色
+      // 如果使用了APPBar，则需要修改statusBarBrightness属性,没使用则不用管
+      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarBrightness: Brightness.light,statusBarColor: Colors.transparent);
+      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    }
+
+    //statusBarColor 控制背景色值
+    //statusBarIconBrightness:Brightness.dark 控制本文色值为黑色 / Brightness.light 这个就是白色
+
     return MaterialApp(
       home: Scaffold(
         body: this._tabPageList[_currentIndex],
