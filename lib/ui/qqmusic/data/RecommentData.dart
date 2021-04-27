@@ -9,6 +9,8 @@ class RecommentData {
   String img2;
   String img3;
   String descText;
+  bool onlyShowFirstImg = false;
 
-  RecommentData(this.img1, this.img2, this.img3, this.descText);
+  RecommentData(
+      this.img1, this.img2, this.img3, this.descText, this.onlyShowFirstImg);
 }
