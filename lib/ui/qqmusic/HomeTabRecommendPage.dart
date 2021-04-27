@@ -60,6 +60,7 @@ class HomeTabRecommendPageState extends State {
             Container(
                 height: 170,
                 child: ListView.builder(
+                    itemCount: mRecommentData.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return getRecommentItem(index);
@@ -83,12 +84,10 @@ class HomeTabRecommendPageState extends State {
                 height: 420,
                 padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
                 child: GridView.builder(
+                  itemCount: mSongLists.length,
                   scrollDirection: Axis.horizontal,
-                  reverse: false,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 1.4
-                  ),
+                      crossAxisCount: 2, childAspectRatio: 1.4),
                   itemBuilder: (context, index) {
                     return getSongListItem(index);
                   },
