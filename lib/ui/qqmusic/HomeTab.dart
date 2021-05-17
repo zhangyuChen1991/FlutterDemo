@@ -80,10 +80,10 @@ class SearchBarState extends State<SearchBar> with WidgetsBindingObserver {
         _nextSearchBarItem = 0;
       });
     }
-    log("timer task.. _nextSearchBarItem = " +
-        _nextSearchBarItem.toString() +
-        ", length: " +
-        DebugData.searchBarItems.length.toString());
+    // log("timer task.. _nextSearchBarItem = " +
+    //     _nextSearchBarItem.toString() +
+    //     ", length: " +
+    //     DebugData.searchBarItems.length.toString());
   });
 
   @override
