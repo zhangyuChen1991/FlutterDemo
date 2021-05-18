@@ -20,6 +20,7 @@ class ListStateDemo extends State<ListStatefulWedgit> {
           title: Text('ListView.builder'),
         ),
         body: ListView.builder(
+            scrollDirection:Axis.vertical,
             itemCount: items.length,
             itemBuilder: (context, index) {
               return Text("${items[index]}");

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:first_flutter_app/ui/qqmusic/HomeTabRadioPage.dart';
+import 'package:first_flutter_app/ui/qqmusic/HomeTabVideoPage.dart';
 import 'package:first_flutter_app/ui/qqmusic/HomeTabRecommendPage.dart';
 import 'package:first_flutter_app/ui/qqmusic/data/DebugData.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,10 +28,10 @@ class HomeTabState extends State {
       var mPageOffset = mPageController.offset; //相对于整个PageView滚动控件，位置偏移量(滚动的距离)
       var mPageIndex =
           mPageController.page; //从第一个tab滑到第二个tab的过程中，mPageIndex会从0逐渐变到1
-      log("mPageOffset: " +
-          mPageOffset.toString() +
-          ", mPageIndex: " +
-          mPageIndex.toString());
+      // log("mPageOffset: " +
+      //     mPageOffset.toString() +
+      //     ", mPageIndex: " +
+      //     mPageIndex.toString());
 
       //计算滑动指示器的左边距，直接套用这个公式就可以了: 初始左边距加上tab间距乘以mPageController.page
       var leftMargin = 10 + mPageIndex * 50;
@@ -47,7 +47,7 @@ class HomeTabState extends State {
             child: PageView(
           controller: mPageController,
           scrollDirection: Axis.horizontal,
-          children: [HomeTabRecommendPage(), HomeTabRadioPage()],
+          children: [HomeTabRecommendPage(), HomeTabVideoPage()],
         )),
       ],
     );
@@ -204,7 +204,7 @@ class TitleBarState extends State {
           height: 30,
         ),
         Row(
-          children: [getTitleBarText("推荐"), getTitleBarText("电台")],
+          children: [getTitleBarText("推荐"), getTitleBarText("视频")],
         ),
         //PagerView滑动指示器
         Container(

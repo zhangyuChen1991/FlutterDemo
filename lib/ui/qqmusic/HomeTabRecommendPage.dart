@@ -318,7 +318,7 @@ class HomeTabRecommendPageState extends State {
               height: 80,
               //圆角图片
               decoration: BoxDecoration(
-                  color: Color(0xffFA8072),
+                  color: Color(0xffFFF7AACB),
                   borderRadius: BorderRadius.circular(8),
                   image: DecorationImage(image: NetworkImage(data.img)))),
           SizedBox(
