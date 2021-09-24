@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:ui';
 
+import 'package:first_flutter_app/ui/qqmusic/data/MenuData.dart';
 import 'package:first_flutter_app/ui/qqmusic/data/VideoBean.dart';
 import 'package:first_flutter_app/ui/qqmusic/data/VideoItemData.dart';
 import 'package:first_flutter_app/utils/SizeUtil.dart';
@@ -230,5 +231,25 @@ Widget getSingleVideoItem(int type, VideoBean bean) {
         )
       ],
     ),
+  );
+}
+
+Widget getMenuItem(MenuData bean){
+  return Column(
+    children: [
+      Image.asset(
+        "images/video_poster_select_video.webp",
+        width: 17,
+        height: 17,
+      ),
+      SizedBox(
+        width: 3,
+      ),
+      Text(bean.menuName,
+          style: new TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFffffff))),
+    ],
   );
 }

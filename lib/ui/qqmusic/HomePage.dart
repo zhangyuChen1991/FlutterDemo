@@ -36,12 +36,12 @@ class HomePageState extends State<HomePage> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
 
-    if (Platform.isAndroid) {
-      // 在组件渲染之后，再覆写状态栏颜色
-      // 如果使用了APPBar，则需要修改statusBarBrightness属性,没使用则不用管
-      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarBrightness: Brightness.light,statusBarColor: Colors.transparent);
-      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-    }
+    // if (Platform.isAndroid) {
+    //   // 在组件渲染之后，再覆写状态栏颜色
+    //   // 如果使用了APPBar，则需要修改statusBarBrightness属性,没使用则不用管
+    //   SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarBrightness: Brightness.light,statusBarColor: Colors.transparent);
+    //   SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    // }
 
     //statusBarColor 控制背景色值
     //statusBarIconBrightness:Brightness.dark 控制本文色值为黑色 / Brightness.light 这个就是白色

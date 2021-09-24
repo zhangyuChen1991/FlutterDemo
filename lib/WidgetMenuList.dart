@@ -1,5 +1,6 @@
 import 'package:first_flutter_app/BaseWidget1.dart';
 import 'package:first_flutter_app/BaseWidget2.dart';
+import 'package:first_flutter_app/PopWindowDemoPage.dart';
 import 'package:first_flutter_app/TableDemo.dart';
 import 'package:first_flutter_app/DialogDemo.dart';
 import 'package:first_flutter_app/LayoutWidget.dart';
@@ -27,6 +28,7 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
     'SimpleDialog/AlertDialog/BottomSheet',
     'Drawer/Appbar/BottomNavigationBar/TabBar',
     'ListView',
+    'PopWindow',
     'QQ音乐主页',
     ''
   ];
@@ -73,6 +75,10 @@ class WidgetMenuPageState extends State<WidgetMenuPage> {
                       }
                       break;
                       case 8:{
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new PopWindowDemoPage()));
+                      }
+                      break;
+                      case 9:{
                         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => new HomePage()));
                       }
                       break;

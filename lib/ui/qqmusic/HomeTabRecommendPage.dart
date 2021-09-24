@@ -100,7 +100,7 @@ class HomeTabRecommendPageState extends State {
                 ),
               ),
               Container(
-                  height: 415,
+                  height: 416,
                   padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
                   child: GridView.builder(
                     itemCount: mSongLists.length,
